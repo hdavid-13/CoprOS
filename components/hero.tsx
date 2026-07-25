@@ -72,7 +72,7 @@ const partners = [
         className="font-bold text-lg"
         src="https://www.clcv.org/themes/clcv/assets/images/logo-clcv.svg"
       />
-    ), // Remplacer par <CLCVLogo />
+    ),
     url: "https://www.clcv.org",
     description: "Consommation, Logement et Cadres de Vie"
   },
@@ -83,11 +83,16 @@ const partners = [
     description: "Agence Départementale pour l'Information sur le Logement"
   },
   {
-    name: "Gouvernement",
-    logo: <span className="font-bold text-lg">🇫🇷</span>, // Remplacer par <GouvLogo />
-    url: "https://www.service-public.fr/particuliers/vosdroits/F1755",
-    description: "Services publics pour les copropriétés"
-  }
+    name: "Service Public",
+    logo: (
+      <img 
+        className="font-bold text-lg"
+        src="https://www.ademe.fr/wp-content/uploads/2022/03/logorf.svg"
+      />
+    ),
+    url: "https://www.clcv.org",
+    description: "Consommation, Logement et Cadres de Vie"
+  },
 ];
 
 export function Hero() {

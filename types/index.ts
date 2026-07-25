@@ -4,5 +4,3 @@ export interface CompteInfo {
   solde: number;
   // Ajoute d'autres propriétés si nécessaire
 }
-
-export type infoCopro = CompteInfo[];

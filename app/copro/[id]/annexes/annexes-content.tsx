@@ -11,7 +11,7 @@ interface CompteInfo {
 }
 
 export default async function AnnexesContent({ id }: { id: string }) {
-    const infoCopro: CompteInfo[] = await getAnnexesByCoproId(id);
+    const infoCopro: CompteInfo[] | null = await getAnnexesByCoproId(id);
 
     if (!infoCopro || infoCopro.length === 0) {
         return <div className="p-6 text-center text-gray-600">Aucune donnée disponible pour cette copropriété.</div>;
@@ -32,7 +32,7 @@ export default async function AnnexesContent({ id }: { id: string }) {
 
     const supabase = await createClient();
 
-    const { data: copropriete, error: coproprieteError } = await supabase
+    const { data: copropriete } = await supabase
         .from("copropriete")
         .select("*")
         .eq("id", id)

@@ -1,8 +1,9 @@
+// app/copro/[id]/annexes/data.ts
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
-import { infoCopro } from "@/types";
+import { CompteInfo } from "@/types";
 
-export async function getAnnexesByCoproId(id: string): Promise<infoCopro | null> {
+export async function getAnnexesByCoproId(id: string): Promise<CompteInfo[] | null> {
     const supabase = await createClient();
 
     // 1. Vérifie que la copropriété existe
@@ -17,16 +18,25 @@ export async function getAnnexesByCoproId(id: string): Promise<infoCopro | null>
         return null;
     }
 
-    const { data: infoCopro, error: infoCoproError } = await supabase
+    // 2. Récupère les données de la vue vue_balance_generale
+    const { data: infoCoproData, error: infoCoproError } = await supabase
         .from("vue_balance_generale")
         .select("*")
         .eq("copropriete_id", id)
-        .or(`total_debit.neq.0,total_credit.neq.0`)
+        .or(`total_debit.neq.0,total_credit.neq.0`);
 
-    if (infoCoproError || !infoCopro) {
+    if (infoCoproError || !infoCoproData) {
         console.error("Infos de la copropriété introuvables :", infoCoproError?.message);
         return null;
     }
 
-    return infoCopro as infoCopro;
+    // 3. Adapte les données pour correspondre à CompteInfo
+    const adaptedInfoCopro: CompteInfo[] = infoCoproData.map((item) => ({
+        numero_compte: item.numero_compte,
+        solde: item.solde || (item.total_credit - item.total_debit),
+        total_debit: item.total_debit, // Inclure total_debit
+        total_credit: item.total_credit, // Inclure total_credit
+    }));
+
+    return adaptedInfoCopro;
 }
