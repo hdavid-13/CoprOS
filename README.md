@@ -1,109 +1,137 @@
-<a href="https://demo-nextjs-with-supabase.vercel.app/">
-  <img alt="Next.js and Supabase Starter Kit - the fastest way to build apps with Next.js and Supabase" src="https://demo-nextjs-with-supabase.vercel.app/opengraph-image.png">
-  <h1 align="center">Next.js and Supabase Starter Kit</h1>
-</a>
+# CoprOS
 
-<p align="center">
- The fastest way to build apps with Next.js and Supabase
-</p>
+**La solution open source complète pour la gestion de copropriété**
 
-<p align="center">
-  <a href="#features"><strong>Features</strong></a> ·
-  <a href="#demo"><strong>Demo</strong></a> ·
-  <a href="#deploy-to-vercel"><strong>Deploy to Vercel</strong></a> ·
-  <a href="#clone-and-run-locally"><strong>Clone and run locally</strong></a> ·
-  <a href="#feedback-and-issues"><strong>Feedback and issues</strong></a>
-  <a href="#more-supabase-examples"><strong>More Examples</strong></a>
-</p>
-<br/>
+[License: MIT](https://opensource.org/licenses/MIT)  
+[Next.js](https://nextjs.org/)  
+[Supabase](https://supabase.com/)  
+[GitHub Stars](https://github.com/hdavid-13/CoprOS)
 
-## Features
+---
 
-- Works across the entire [Next.js](https://nextjs.org) stack
-  - App Router
-  - Pages Router
-  - Proxy
-  - Client
-  - Server
-  - It just works!
-- supabase-ssr. A package to configure Supabase Auth to use cookies
-- Password-based authentication block installed via the [Supabase UI Library](https://supabase.com/ui/docs/nextjs/password-based-auth)
-- Styling with [Tailwind CSS](https://tailwindcss.com)
-- Components with [shadcn/ui](https://ui.shadcn.com/)
-- Optional deployment with [Supabase Vercel Integration and Vercel deploy](#deploy-your-own)
-  - Environment variables automatically assigned to Vercel project
+## 📌 À propos de CoprOS
 
-## Demo
+**CoprOS** est une plateforme **open source** conçue pour moderniser et simplifier la gestion des copropriétés. Développée par [Hugo DAVID](https://github.com/hdavid-13), elle offre une solution tout-en-un pour les syndicats de copropriétaires, avec des fonctionnalités avancées comme le vote en ligne, la gestion financière, l'automatisation des rappels, et bien plus.
 
-You can view a fully working demo at [demo-nextjs-with-supabase.vercel.app](https://demo-nextjs-with-supabase.vercel.app/).
+✅ **100% Open Source** – Code transparent et modifiable.  
+✅ **Hébergement gratuit** – Déployez votre propre instance ou rejoignez notre réseau bénévole.  
+✅ **Conforme RGPD** – Sécurité et respect des données garantis.  
+✅ **Modulaire** – Activez uniquement les fonctionnalités dont vous avez besoin.
 
-## Deploy to Vercel
+---
 
-Vercel deployment will guide you through creating a Supabase account and project.
+## 🚀 Fonctionnalités
 
-After installation of the Supabase integration, all relevant environment variables will be assigned to the project so the deployment is fully functioning.
+### 🗳️ **Gouvernance**
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&project-name=nextjs-with-supabase&repository-name=nextjs-with-supabase&demo-title=nextjs-with-supabase&demo-description=This+starter+configures+Supabase+Auth+to+use+cookies%2C+making+the+user%27s+session+available+throughout+the+entire+Next.js+app+-+Client+Components%2C+Server+Components%2C+Route+Handlers%2C+Server+Actions+and+Middleware.&demo-url=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2F&external-id=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&demo-image=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2Fopengraph-image.png)
+- **Vote en ligne** : Organisez des votes sécurisés pour les décisions importantes (travaux, budget, etc.).
+- **Assemblées générales** : Planification et gestion des AG avec historique des décisions.
 
-The above will also clone the Starter kit to your GitHub, you can clone that locally and develop locally.
+### 💰 **Gestion financière**
 
-If you wish to just develop locally and not deploy to Vercel, [follow the steps below](#clone-and-run-locally).
+- **Comptabilité automatisée** : Suivi des charges, des paiements et des dettes.
+- **Appels de fonds** : Génération et envoi automatique des appels de charges.
+- **Rappels intelligents** : Automatisation des relances pour les copropriétaires en retard.
 
-## Clone and run locally
+### 📄 **Documentation &amp; Transparence**
 
-1. You'll first need a Supabase project which can be made [via the Supabase dashboard](https://database.new)
+- **Espace documentaire** : Centralisation des procès-verbaux, règlements, et contrats.
+- **Forum communautaire** : Échange entre copropriétaires et partage de bonnes pratiques.
+- **Newsletter** : Envoi régulier d’informations importantes (travaux, deadlines, etc.).
 
-2. Create a Next.js app using the Supabase Starter template npx command
+### 🤖 **Automatisation &amp; IA**
 
-   ```bash
-   npx create-next-app --example with-supabase with-supabase-app
-   ```
+- **Assistants IA** : Modèles dédiés pour optimiser la gestion (classification de documents, réponses aux questions fréquentes).
+- **Automatisation des tâches** : Réduction des tâches manuelles répétitives.
 
-   ```bash
-   yarn create next-app --example with-supabase with-supabase-app
-   ```
+### 🌐 **Réseau &amp; Collaboration**
 
-   ```bash
-   pnpm create next-app --example with-supabase with-supabase-app
-   ```
+- **Réseau solidaire** : Rejoignez une communauté de copropriétés pour partager des ressources et des conseils.
+- **Connexion aux services d’aides** : Intégration avec les associations (ANCC, CLCV, ADIL) et les services publics.
 
-3. Use `cd` to change into the app's directory
+---
 
-   ```bash
-   cd with-supabase-app
-   ```
+## 🛠️ Technologies
 
-4. Rename `.env.example` to `.env.local` and update the following:
 
-  ```env
-  NEXT_PUBLIC_SUPABASE_URL=[INSERT SUPABASE PROJECT URL]
-  NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=[INSERT SUPABASE PROJECT API PUBLISHABLE OR ANON KEY]
+| Technologie      | Usage                      | Lien                                        |
+| ---------------- | -------------------------- | ------------------------------------------- |
+| **Next.js**      | Framework front-end        | [nextjs.org](https://nextjs.org/)           |
+| **Supabase**     | Base de données &amp; Auth | [supabase.com](https://supabase.com/)       |
+| **Tailwind CSS** | Styling                    | [tailwindcss.com](https://tailwindcss.com/) |
+| **Lucide React** | Icônes                     | [lucide.dev](https://lucide.dev/)           |
+| **Vercel**       | Hébergement (optionnel)    | [vercel.com](https://vercel.com/)           |
+
+
+---
+
+## 📥 Installation
+
+### Prérequis
+
+- Node.js (v18+)
+- npm ou yarn
+- Un compte [Supabase](https://supabase.com/) (pour la base de données)
+
+### Étapes
+
+1. **Cloner le dépôt** :
+  ```bash
+   git clone https://github.com/hdavid-13/CoprOS.git
+   cd CoprOS
   ```
-  > [!NOTE]
-  > This example uses `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, which refers to Supabase's new **publishable** key format.
-  > Both legacy **anon** keys and new **publishable** keys can be used with this variable name during the transition period. Supabase's dashboard may show `NEXT_PUBLIC_SUPABASE_ANON_KEY`; its value can be used in this example.
-  > See the [full announcement](https://github.com/orgs/supabase/discussions/29260) for more information.
-
-  Both `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` can be found in [your Supabase project's API settings](https://supabase.com/dashboard/project/_?showConnect=true)
-
-5. You can now run the Next.js local development server:
-
-   ```bash
+2. **Installer les dépendances** :
+  ```bash
+   npm install
+   # ou
+   yarn install
+  ```
+3. **Configurer les variables d’environnement** :
+  - Copiez le fichier `.env.example` en `.env.local`.
+  - Remplissez les clés **Supabase** (`NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`).
+  - Ajoutez d’autres variables si nécessaire (ex: clés API pour les services externes).
+4. **Lancer l’application** :
+  ```bash
    npm run dev
-   ```
+   # ou
+   yarn dev
+  ```
 
-   The starter kit should now be running on [localhost:3000](http://localhost:3000/).
+   L’application sera accessible à [http://localhost:3000](http://localhost:3000).
 
-6. This template comes with the default shadcn/ui style initialized. If you instead want other ui.shadcn styles, delete `components.json` and [re-install shadcn/ui](https://ui.shadcn.com/docs/installation/next)
+---
 
-> Check out [the docs for Local Development](https://supabase.com/docs/guides/getting-started/local-development) to also run Supabase locally.
+## 🌍 Déploiement
 
-## Feedback and issues
+### Option 1 : Hébergement gratuit sur Vercel
 
-Please file feedback and issues over on the [Supabase GitHub org](https://github.com/supabase/supabase/issues/new/choose).
+1. Poussez votre code sur un dépôt GitHub/GitLab.
+2. Connectez-vous à [Vercel](https://vercel.com/) et importez le dépôt.
+3. Configurez les variables d’environnement dans les paramètres du projet.
+4. Déployez !
 
-## More Supabase examples
+### Option 2 : Auto-hébergement
 
-- [Next.js Subscription Payments Starter](https://github.com/vercel/nextjs-subscription-payments)
-- [Cookie-based Auth and the Next.js 13 App Router (free course)](https://youtube.com/playlist?list=PL5S4mPUpp4OtMhpnp93EFSo42iQ40XjbF)
-- [Supabase Auth and the Next.js App Router](https://github.com/supabase/supabase/tree/master/examples/auth/nextjs)
+- **Docker** : Un `Dockerfile` est fourni pour faciliter le déploiement.
+- **Autres plateformes** : CoprOS est compatible avec Netlify, Railway, ou tout service supportant Next.js.
+
+### Option 3 : Rejoindre le réseau CoprOS
+
+- Hébergez votre copropriété sur notre instance partagée (gratuit pour les copropriétés bénévoles).
+- Contactez-nous via [GitHub Discussions](https://github.com/hdavid-13/CoprOS/discussions) pour plus d’informations.
+
+---
+
+## 🤝 Contribuer
+
+Les contributions sont les bienvenues ! Voici comment aider :
+
+1. **Signaler un bug** : Ouvrez une [issue](https://github.com/hdavid-13/CoprOS/issues) avec une description claire.
+2. **Proposer une fonctionnalité** : Partagez vos idées dans les [discussions](https://github.com/hdavid-13/CoprOS/discussions).
+3. **Contribuer au code** :
+  - Forkez le dépôt.
+  - Créez une branche (`git checkout -b feature/ma-fonctionnalité`).
+  - Commitez vos changements (`git commit -m 'Ajout de ma fonctionnalité'`).
+  - Poussez vers la branche (`git push origin feature/ma-fonctionnalité`).
+  - Ouvrez une [Pull Request](https://github.com/hdavid-13/CoprOS/pulls).
+
