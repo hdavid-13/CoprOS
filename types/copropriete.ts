@@ -87,3 +87,8 @@ export type SyntheseCopropriete = {
   solde_debit_total: number;
   solde_credit_total: number;
 };
+
+
+
+// ✅ Ajoute ListCopro comme un tableau de SyntheseCopropriete
+export type ListCopro = SyntheseCopropriete[];

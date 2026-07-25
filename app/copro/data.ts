@@ -1,7 +1,7 @@
 // app/documents/data.ts
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
-import { SyntheseCopropriete } from "@/types/copropriete";
+import { SyntheseCopropriete } from "@/types/copropriete"; // ✅ Utilise SyntheseCopropriete
 
 export async function getCoproprietesByUser(): Promise<SyntheseCopropriete[] | null> {
   const supabase = await createClient();

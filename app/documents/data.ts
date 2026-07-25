@@ -1,8 +1,9 @@
+// app/documents/data.ts
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
 import { ListCopro } from "@/types/copropriete";
 
-export async function getCoproprietesByUser(): Promise<ListCopro[] | null> {
+export async function getCoproprietesByUser(): Promise<ListCopro | null> {
   const supabase = await createClient();
 
   const { data: { user }, error: authError } = await supabase.auth.getUser();
