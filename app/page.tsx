@@ -8,7 +8,7 @@ import { SignUpUserSteps } from "@/components/tutorial/sign-up-user-steps";
 import { hasEnvVars } from "@/lib/utils";
 import Link from "next/link";
 import { Suspense } from "react";
-import { LayoutDashboard, Building2, FileText, Calendar, Vote, BookOpen, Eye, Roadmap, Users } from "lucide-react";
+import { LayoutDashboard, Building2, FileText, Calendar, Vote, BookOpen, Eye, Map, Users } from "lucide-react";
 
 export default function Home() {
   return (
