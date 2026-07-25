@@ -1,11 +1,18 @@
+// dashboard/coproprietaire.ts
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
-import { getCoproprietaireData } from "@/types/coproprietaire";
+import { User } from "@supabase/supabase-js"; // Import du type User de Supabase
 
+// Interface pour le type de retour
+interface CoproprietaireDataResult {
+  error: string | null;
+  rows: any[]; // Remplace `any` par le type de tes données si possible
+  user: User;
+}
 
 export async function getCoproprietaireData(
   id: string
-): Promise<getCoproprietaireData | null> {
+): Promise<CoproprietaireDataResult | null> {
   const supabase = await createClient();
 
   const {
@@ -19,9 +26,9 @@ export async function getCoproprietaireData(
 
   // 1. Récupérer le profil du user pour trouver coproprietaire_id
   const { data: profile, error: profileError } = await supabase
-    .from("profiles")             // ou le nom de ta table de liaison
+    .from("profiles")
     .select("coproprietaire_id")
-    .eq("id", user.id)           // id = UID Supabase
+    .eq("id", user.id)
     .single();
 
   if (profileError) {
@@ -34,13 +41,13 @@ export async function getCoproprietaireData(
     return null;
   }
 
-  // 2. Interroger la nouvelle vue de l'historique financier et trier par date
+  // 2. Interroger la vue de l'historique financier
   const { data, error } = await supabase
     .from("v_historique_comptes_coproprietaires")
     .select("*")
     .eq("coproprietaire_id", profile.coproprietaire_id)
     .order("date_comptable", { ascending: true })
-    .order("ligne_id", { ascending: true }); // Deuxième tri pour garantir la stabilité si même date
+    .order("ligne_id", { ascending: true });
 
   if (error) {
     console.error("Erreur historique:", error);
