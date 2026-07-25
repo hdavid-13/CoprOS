@@ -1,18 +1,16 @@
 // dashboard/coproprietaire.ts
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
-import { User } from "@supabase/supabase-js"; // Import du type User de Supabase
+import { User } from "@supabase/supabase-js";
 
 // Interface pour le type de retour
-interface CoproprietaireDataResult {
+export interface CoproprietaireDataResult {
   error: string | null;
-  rows: any[]; // Remplace `any` par le type de tes données si possible
-  user: User;
+  rows: any[]; // Remplace `any` par un type plus précis si possible
+  user: User | null;
 }
 
-export async function getCoproprietaireData(
-  id: string
-): Promise<CoproprietaireDataResult | null> {
+export async function getCoproprietaireData(): Promise<CoproprietaireDataResult> {
   const supabase = await createClient();
 
   const {
@@ -31,14 +29,12 @@ export async function getCoproprietaireData(
     .eq("id", user.id)
     .single();
 
-  if (profileError) {
-    console.error("Erreur profil:", profileError);
-    return null;
-  }
-
-  if (!profile?.coproprietaire_id) {
-    console.error("Aucun coproprietaire_id pour ce user");
-    return null;
+  if (profileError || !profile?.coproprietaire_id) {
+    return {
+      error: profileError?.message || "Aucun coproprietaire_id trouvé pour ce user",
+      rows: [],
+      user: null,
+    };
   }
 
   // 2. Interroger la vue de l'historique financier
@@ -50,7 +46,6 @@ export async function getCoproprietaireData(
     .order("ligne_id", { ascending: true });
 
   if (error) {
-    console.error("Erreur historique:", error);
     return { error: error.message, rows: [], user };
   }
 
