@@ -1,10 +1,17 @@
 // app/copro/[id]/annexes/annexes-content.tsx
 import { getAnnexesByCoproId } from "./data";
 import { createClient } from "@/lib/supabase/server";
-import { InteractiveTable } from "./InteractiveTable"; // Import du Client Component
+import { InteractiveTable } from "./InteractiveTable";
+
+// Interface pour typer les données de compte
+interface CompteInfo {
+  numero_compte: string;
+  solde: number;
+  // Ajoute d'autres propriétés si nécessaire
+}
 
 export default async function AnnexesContent({ id }: { id: string }) {
-    const infoCopro = await getAnnexesByCoproId(id);
+    const infoCopro: CompteInfo[] = await getAnnexesByCoproId(id);
 
     if (!infoCopro || infoCopro.length === 0) {
         return <div className="p-6 text-center text-gray-600">Aucune donnée disponible pour cette copropriété.</div>;
@@ -12,16 +19,16 @@ export default async function AnnexesContent({ id }: { id: string }) {
 
     // Calcul des totaux pour les cartes
     const totalTresorerie = infoCopro
-        .filter(row => row.numero_compte === "1031")
-        .reduce((sum, row) => sum + row.solde, 0);
+        .filter((row: CompteInfo) => row.numero_compte === "1031")
+        .reduce((sum: number, row: CompteInfo) => sum + row.solde, 0);
 
     const totalFondsTravaux = infoCopro
-        .filter(row => row.numero_compte === "102")
-        .reduce((sum, row) => sum + row.solde, 0);
+        .filter((row: CompteInfo) => row.numero_compte === "102")
+        .reduce((sum: number, row: CompteInfo) => sum + row.solde, 0);
 
     const totalCompteBanque = infoCopro
-        .filter(row => row.numero_compte === "512")
-        .reduce((sum, row) => sum + row.solde, 0);
+        .filter((row: CompteInfo) => row.numero_compte === "512")
+        .reduce((sum: number, row: CompteInfo) => sum + row.solde, 0);
 
     const supabase = await createClient();
 
