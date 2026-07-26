@@ -43,8 +43,8 @@ export function InteractiveTable({ infoCopro, id }: { infoCopro: any[]; id: stri
                                 onClick={() => handleRowClick(row.numero_compte)}
                             >
                                 <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-900">{row.numero_compte}</td>
-                                <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-900">{row.intitule}</td>
-                                <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-500 hidden md:table-cell">{row.type_compte}</td>
+                                <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-900">{row.libelle}</td>
+                                <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-500 hidden md:table-cell">{row.type}</td>
                                 <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-900 text-right">
                                     {row.total_debit.toLocaleString('fr-FR', { minimumFractionDigits: 2 })}
                                 </td>
@@ -57,7 +57,7 @@ export function InteractiveTable({ infoCopro, id }: { infoCopro: any[]; id: stri
                                     {row.solde.toLocaleString('fr-FR', { minimumFractionDigits: 2 })}
                                 </td>
                                 <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-500 text-right hidden lg:table-cell">
-                                    {row.nb_mouvements}
+                                    {row.mouvement}
                                 </td>
                             </tr>
                         );

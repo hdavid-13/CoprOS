@@ -36,6 +36,9 @@ export async function getAnnexesByCoproId(id: string): Promise<CompteInfo[] | nu
         solde: item.solde || (item.total_credit - item.total_debit),
         total_debit: item.total_debit, // Inclure total_debit
         total_credit: item.total_credit, // Inclure total_credit
+        libelle: item.intitule,
+        mouvement: item.nb_mouvements,
+        type: item.type_compte
     }));
 
     return adaptedInfoCopro;

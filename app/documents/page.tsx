@@ -1,7 +1,7 @@
 // app/copro/page.tsx
 import { Suspense } from "react";
 import { getCoproprietesByUser } from "./data";
-import CoproClientPage from "./copro-client-page";
+import CoproClientPage from "./DocumentsPage";
 
 export default async function CoproPage() {
   return (
