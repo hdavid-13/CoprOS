@@ -15,7 +15,7 @@ import {
   Cloud,
   Shield,
   Zap,
-  Heart
+  Handshake
 } from "lucide-react";
 
 const features = [
@@ -60,10 +60,15 @@ const quickActions = [
 // Partenaires avec leurs logos (à remplacer par les vrais composants/images)
 const partners = [
   {
-    name: "ANCC",
-    logo: <span className="font-bold text-lg">ANCC</span>, // Remplacer par <ANCCLogo />
-    url: "https://www.ancc.fr",
-    description: "Association Nationale des Copropriétaires et Copropriétés"
+    name: "ANIL",
+    logo: (
+      <img 
+        className="font-bold text-lg"
+        src="https://www.anil.org/_assets/2cdbe9cb694b7570aa05b07b14d5f82a/Sources/img/logo-anil.svg"
+      />
+    ),
+    url: "https://www.anil.org/qui-sommes-nous/reseau-des-adil/",
+    description: "Agence National pour l'information sur le logement"
   },
   {
     name: "CLCV",
@@ -77,10 +82,15 @@ const partners = [
     description: "Consommation, Logement et Cadres de Vie"
   },
   {
-    name: "ADIL",
-    logo: <span className="font-bold text-lg">ADIL</span>, // Remplacer par <ADILLogo />
-    url: "https://www.adil.org",
-    description: "Agence Départementale pour l'Information sur le Logement"
+    name: "LOUTRE",
+    logo: (
+      <img 
+        className="font-bold text-lg"
+        src="https://amp.loutre-renovation.fr/build/images/logo.svg"
+      />
+    ),
+    url: "https://amp.loutre-renovation.fr/",
+    description: "Plateforme de rénovation Marseille"
   },
   {
     name: "Service Public",
@@ -179,8 +189,8 @@ export function Hero() {
         <div className="mt-20 pt-12 border-t border-border/20">
           <div className="flex flex-col items-center gap-8">
             <div className="flex items-center gap-2 text-center">
-              <Heart size={20} className="text-primary" />
-              <h3 className="text-xl font-semibold">Soutenu par nos partenaires</h3>
+              <Handshake size={20} className="text-primary" />
+              <h3 className="text-xl font-semibold">Partenariat</h3>
             </div>
             
             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">

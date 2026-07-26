@@ -50,7 +50,7 @@ export default async function HistoriqueContent({
         </p>
         <Link
           href={`/copro/${id}/annexes`}
-          className="inline-flex items-center px-4 py-2 mt-4 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700"
+          className="inline-flex items-center px-4 py-2 mt-4 text-sm font-medium text-white bg-gray-600 rounded-md hover:bg-gray-700"
         >
           Retour à la balance générale
         </Link>
